@@ -11,7 +11,7 @@ class ViewController: UIViewController {
 
     
     @IBAction func yyb(_ sender: Any) {
-        print("语音识别按钮")
+        print("语音识别按钮1")
     }
     
     
