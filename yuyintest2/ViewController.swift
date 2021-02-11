@@ -78,17 +78,18 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate{
             print("audioSession properties weren't set because of an error.")
         }
         
-        recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
+        recognitionRequest = SFSpeechAudioBufferRecognitionRequest()//实例化识别请求
         
+        //检查audioengine，检查手机硬件是否支持录音。模拟器无法调用mac电脑麦克风，需要使用iPhone实机调试
         guard let inputNode :AVAudioInputNode? = audioEngine.inputNode else {
             fatalError("Audio engine has no input node")
         }
-        
+        //检测是否正常实例speech kit识别请求类
         guard let recognitionRequest = recognitionRequest else {
             fatalError("Unable to create an SFSpeechAudioBufferRecognitionRequest object")
         }
-        
-        recognitionRequest.shouldReportPartialResults = true
+        //让识别请求是听多少识别多少，而非等到录音完成才识别，赋值true
+        recognitionRequest.shouldReportPartialResults = false
         
         recognitionTask = speechRecognizer?.recognitionTask(with: recognitionRequest, resultHandler: { (result, error) in
             
@@ -97,6 +98,8 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate{
             if result != nil {
                 
                 self.textView.text = result?.bestTranscription.formattedString
+                let jieguo = result?.bestTranscription.formattedString
+                print(jieguo)
                 isFinal = (result?.isFinal)!
             }
             
