@@ -33,6 +33,15 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate{
     
     @IBOutlet weak var yybO: UIButton!
     
+    @IBOutlet weak var xuenian: UITextView!
+    
+    @IBOutlet weak var xueqi: UITextView!
+    
+    
+    @IBOutlet weak var requiredCode: UITextView!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         yybO.isEnabled = false
@@ -58,6 +67,24 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate{
         
         
         // Do any additional setup after loading the view.
+    }
+    
+    func indexIndentify(jieguo: String) {
+        var indexnum: Int = 0
+        let long2 = jieguo.count
+        for ij in 0..<long2 {
+            print(jieguo[jieguo.index(jieguo.startIndex, offsetBy: ij)])
+            var str3: String = ""
+            str3.append(jieguo[jieguo.index(jieguo.startIndex, offsetBy: ij)])
+            if str3 == "2" {
+                print("2在字符串第")
+                print(indexnum)
+                print("位")
+                break
+            }
+            indexnum = indexnum + 1
+        }
+        
     }
     
     
@@ -88,7 +115,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate{
         guard let recognitionRequest = recognitionRequest else {
             fatalError("Unable to create an SFSpeechAudioBufferRecognitionRequest object")
         }
-        //让识别请求是听多少识别多少，而非等到录音完成才识别，赋值true
+        //让识别请求是听多少识别多少，而非等到录音完成才识别，赋值true。 false为录音完毕才进行识别
         recognitionRequest.shouldReportPartialResults = false
         
         recognitionTask = speechRecognizer?.recognitionTask(with: recognitionRequest, resultHandler: { (result, error) in
@@ -100,6 +127,23 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate{
                 self.textView.text = result?.bestTranscription.formattedString
                 let jieguo = result?.bestTranscription.formattedString
                 print(jieguo)
+                var indexnum: Int = 0
+                let long2 = jieguo?.count
+                for ij in 0..<long2! {
+                    print(jieguo?[jieguo!.index(jieguo!.startIndex, offsetBy: ij)])
+                    var str3: String = ""
+                    str3.append(jieguo![jieguo!.index(jieguo!.startIndex, offsetBy: ij)])
+                    if str3 == "2" {
+                        print("2在字符串第")
+                        print(indexnum)
+                        print("位")
+                        break
+                    }
+                    indexnum = indexnum + 1
+                }
+                
+                
+                
                 isFinal = (result?.isFinal)!
             }
             
