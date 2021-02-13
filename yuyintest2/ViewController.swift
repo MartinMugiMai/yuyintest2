@@ -69,7 +69,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate{
         // Do any additional setup after loading the view.
     }
     
-    func indexIndentify(jieguo: String) {
+    func indexIndentify(jieguo: String) -> Int {
         var indexnum: Int = 0
         let long2 = jieguo.count
         for ij in 0..<long2 {
@@ -84,8 +84,10 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate{
             }
             indexnum = indexnum + 1
         }
+        return indexnum
         
     }
+    
     
     
     
@@ -127,20 +129,9 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate{
                 self.textView.text = result?.bestTranscription.formattedString
                 let jieguo = result?.bestTranscription.formattedString
                 print(jieguo)
-                var indexnum: Int = 0
-                let long2 = jieguo?.count
-                for ij in 0..<long2! {
-                    print(jieguo?[jieguo!.index(jieguo!.startIndex, offsetBy: ij)])
-                    var str3: String = ""
-                    str3.append(jieguo![jieguo!.index(jieguo!.startIndex, offsetBy: ij)])
-                    if str3 == "2" {
-                        print("2在字符串第")
-                        print(indexnum)
-                        print("位")
-                        break
-                    }
-                    indexnum = indexnum + 1
-                }
+                self.indexIndentify(jieguo: jieguo!)
+                let index22 = self.indexIndentify(jieguo: jieguo!)
+                print(index22)
                 
                 
                 
