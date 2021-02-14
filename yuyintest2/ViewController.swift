@@ -69,6 +69,45 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate{
         // Do any additional setup after loading the view.
     }
     
+    func hanzFou(hanzStr: String) -> Bool {
+        switch hanzStr {
+        case "学期":
+            return true
+        case "第":
+            return true
+        default:
+            return false
+        }
+    }
+    
+    func numberFou(numStr: String) -> Bool {
+        switch numStr {
+        case "0":
+            return true
+        case "1":
+            return true
+        case "2":
+            return true
+        case "3":
+            return true
+        case "4":
+            return true
+        case "5":
+            return true
+        case "6":
+            return true
+        case "7":
+            return true
+        case "8":
+            return true
+        case "9":
+            return true
+        default:
+            return false
+        }
+    }
+    
+    
     func indexIndentify(jieguo: String) -> Int {
         var indexnum: Int = 0
         let long2 = jieguo.count
@@ -76,16 +115,71 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate{
             print(jieguo[jieguo.index(jieguo.startIndex, offsetBy: ij)])
             var str3: String = ""
             str3.append(jieguo[jieguo.index(jieguo.startIndex, offsetBy: ij)])
-            if str3 == "2" {
-                print("2在字符串第")
+            var numberfou = false
+            numberfou = numberFou(numStr: str3)
+            if numberfou == true {
+                print("年份起始在字符串第")
                 print(indexnum)
                 print("位")
-                break
+                return indexnum
+                //break
             }
             indexnum = indexnum + 1
         }
+        indexnum = 0
         return indexnum
-        
+    }
+    
+    func indexIndentify2(jieguo: String) -> Int {
+        var indexnum: Int = 0
+        let long2 = jieguo.count
+        for ij in 0..<long2 {
+            print(jieguo[jieguo.index(jieguo.startIndex, offsetBy: ij)])
+            var str3: String = ""
+            str3.append(jieguo[jieguo.index(jieguo.startIndex, offsetBy: ij)])
+            var difou = false
+            difou = hanzFou(hanzStr: str3)
+            if difou == true {
+                print("学期起始在字符串第")
+                print(indexnum+1)
+                print("位")
+                return indexnum + 1
+                //break
+            }
+            indexnum = indexnum + 1
+        }
+        indexnum = 0
+        return indexnum
+    }
+    
+    func xueqiCatch(jieguo: String, xueqiIndex: Int) -> String {
+        var indexnum: Int = 0
+        let long2 = jieguo.count
+        var str3: String = ""
+        for ij in 0..<3 {
+            let ij1 = ij + xueqiIndex
+            print(jieguo[jieguo.index(jieguo.startIndex, offsetBy: ij1)])
+            str3.append(jieguo[jieguo.index(jieguo.startIndex, offsetBy: ij1)])
+        }
+        print("所查询学期是第")
+        print(str3)
+        xueqi.text = str3
+        return str3
+    }
+    
+    func yearCatch(jieguo: String, erIndex: Int) -> String {
+        var indexnum: Int = 0
+        let long2 = jieguo.count
+        var str3: String = ""
+        for ij in 0..<4 {
+            let ij1 = ij + erIndex
+            print(jieguo[jieguo.index(jieguo.startIndex, offsetBy: ij1)])
+            str3.append(jieguo[jieguo.index(jieguo.startIndex, offsetBy: ij1)])
+        }
+        print("所查询学年第")
+        xuenian.text = str3
+        print(str3)
+        return str3
     }
     
     
@@ -129,9 +223,31 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate{
                 self.textView.text = result?.bestTranscription.formattedString
                 let jieguo = result?.bestTranscription.formattedString
                 print(jieguo)
-                self.indexIndentify(jieguo: jieguo!)
+                //self.indexIndentify(jieguo: jieguo!)
                 let index22 = self.indexIndentify(jieguo: jieguo!)
-                print(index22)
+                //print(index22)
+                //self.yearCatch(jieguo: jieguo!, erIndex: index22)//提取出需要查询的学年
+                let str4 = self.yearCatch(jieguo: jieguo!, erIndex: index22)
+                let index33 = self.indexIndentify2(jieguo: jieguo!)
+                print(index33)
+                //self.xueqiCatch(jieguo: jieguo!, xueqiIndex: index33)
+                let str5 = self.xueqiCatch(jieguo: jieguo!, xueqiIndex: index33)
+                var str6: String = ""
+                var str7: String = ""
+                switch str5 {
+                case "一学期":
+                    str6 = "01"
+                case "二学期":
+                    str6 = "02"
+                default:
+                    str6 = ""
+                }
+                //str3.append(jieguo[jieguo.index(jieguo.startIndex, offsetBy: ij1)])
+                str7 = str4
+                str7.append(str6)
+                self.requiredCode.text = str7
+                
+                
                 
                 
                 
