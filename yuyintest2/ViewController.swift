@@ -79,6 +79,14 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate{
             return false
         }
     }
+    func zhouFou(hanzStr: String) -> Bool {
+        switch hanzStr {
+        case "周":
+            return true
+        default:
+            return false
+        }
+    }
     
     func numberFou(numStr: String) -> Bool {
         switch numStr {
@@ -151,6 +159,71 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate{
         indexnum = 0
         return indexnum
     }
+    
+    func indexIndentify3(jieguo: String) -> String {
+        var indexnum: Int = 0
+        //indexnum = indexnum + indexZhou //将index定位到 例如 ”第3周“定位到第 ”3“的index
+        var indexnum2: Int = 0
+        var indexnum3: Int = 0
+        var indexnum4: Int = 0
+        let long2 = jieguo.count
+        for ij in 0..<long2 {
+            //let ij1 = ij+indexZhou
+            print(jieguo[jieguo.index(jieguo.startIndex, offsetBy: ij)])
+            var str3: String = ""
+            str3.append(jieguo[jieguo.index(jieguo.startIndex, offsetBy: ij)])
+            var difou = false
+            difou = hanzFou(hanzStr: str3)
+            if difou == true {
+                print("第在字符串第")
+                print(indexnum)
+                print("位")
+                indexnum2 = indexnum + 1
+                var str8: String = ""
+                str8.append(jieguo[jieguo.index(jieguo.startIndex, offsetBy: indexnum2+1)])
+                var zhoufou: Bool = false
+                zhoufou = zhouFou(hanzStr: str8)
+                if zhoufou == true {
+                    indexnum3 = indexnum2 + 1
+                    var str9: String = ""
+                    for ij2 in 0..<3 {
+                        let ij3 = ij2 + indexnum
+                        str9.append(jieguo[jieguo.index(jieguo.startIndex, offsetBy: ij3)])
+                        //print(str9)
+                        //return str9
+                        //break//得出第几周，直接跳出循环
+                    }
+                    print(str9)
+                    return str9
+                }else if zhoufou == false{//考虑大于10的周次
+                    var str9: String = ""//
+                    var numfou2: Bool = false
+                    numfou2 = numberFou(numStr: str8)
+                    if numfou2 == true {
+                        indexnum3 = indexnum2 + 1
+                        indexnum4 = indexnum2 + 2
+                        for ij2 in 0..<4 {
+                            var ij3 = ij2 + indexnum
+                            str9.append(jieguo[jieguo.index(jieguo.startIndex, offsetBy: ij3)])
+                            //print(str9)
+                            //return str9
+                            //break//得出第几周，直接跳出循环
+                        }
+                        print(str9)
+                        return str9
+                    }else if numfou2 == false{//考虑识别到第几学期的，排除这种情况
+                        str9 = "识别到这个是学期,继续循环到下一个"
+                        print(str9)
+                        //return str9
+                    }
+                }
+            }
+            indexnum = indexnum + 1
+        }
+        indexnum = 0
+        return ""
+    }
+    
     
     func xueqiCatch(jieguo: String, xueqiIndex: Int) -> String {
         var indexnum: Int = 0
@@ -247,8 +320,10 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate{
                 str7.append(str6)
                 self.requiredCode.text = str7
                 
-                
-                
+                print("那么现在开始进行周次识别")
+                var str11: String = ""
+                str11 = self.indexIndentify3(jieguo: jieguo!)
+                print(str11)
                 
                 
                 isFinal = (result?.isFinal)!
