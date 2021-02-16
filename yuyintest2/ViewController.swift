@@ -343,6 +343,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate{
         let recordingFormat = inputNode?.outputFormat(forBus: 0)
         inputNode?.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer, when) in
             self.recognitionRequest?.append(buffer)
+            //将缓冲区的录音数据提交给识别请求
         }
         
         audioEngine.prepare()
