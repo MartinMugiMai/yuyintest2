@@ -11,18 +11,40 @@
         <!--Item 1-->
         <scene sceneID="r7A-oh-2Bn">
             <objects>
-                <viewController id="ZLs-8u-TVp" sceneMemberID="viewController">
+                <viewController id="ZLs-8u-TVp" customClass="sougoVC" customModule="yuyintest2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="64T-qh-oEv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Lorem ipsum dolor sit er " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ThJ-DE-tOg">
+                                <rect key="frame" x="87" y="85" width="240" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="htx-AY-gYE">
+                                <rect key="frame" x="132" y="150" width="151" height="106"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="录音"/>
+                                <connections>
+                                    <action selector="recButton:" destination="ZLs-8u-TVp" eventType="touchUpInside" id="t04-sf-TEJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="g5H-Ln-ugS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="eZG-Me-mIz"/>
+                    <connections>
+                        <outlet property="recordButtonL" destination="htx-AY-gYE" id="cH9-NI-D0N"/>
+                        <outlet property="textview1" destination="ThJ-DE-tOg" id="tpj-0O-FYN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vpc-L3-xyT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-597" y="-688"/>
+            <point key="canvasLocation" x="-597.10144927536237" y="-688.39285714285711"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="4j1-XS-ekA">

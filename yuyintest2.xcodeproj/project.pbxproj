@@ -13,6 +13,7 @@
 		5BAED38825D01BE6008B700A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BAED38625D01BE6008B700A /* Main.storyboard */; };
 		5BAED38A25D01BE8008B700A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BAED38925D01BE8008B700A /* Assets.xcassets */; };
 		5BAED38D25D01BE8008B700A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BAED38B25D01BE8008B700A /* LaunchScreen.storyboard */; };
+		5BAED39B25DC0EC0008B700A /* sougoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAED39A25DC0EC0008B700A /* sougoVC.swift */; };
 		7B42E08A909A08B5FA0F1421 /* Pods_yuyintest2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92EC43DCFBCBC5429AEB97DC /* Pods_yuyintest2.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		5BAED38925D01BE8008B700A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5BAED38C25D01BE8008B700A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5BAED38E25D01BE8008B700A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BAED39A25DC0EC0008B700A /* sougoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sougoVC.swift; sourceTree = "<group>"; };
 		92EC43DCFBCBC5429AEB97DC /* Pods_yuyintest2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_yuyintest2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -76,6 +78,7 @@
 				5BAED38225D01BE6008B700A /* SceneDelegate.swift */,
 				5BAED38425D01BE6008B700A /* ViewController.swift */,
 				5BAED38625D01BE6008B700A /* Main.storyboard */,
+				5BAED39A25DC0EC0008B700A /* sougoVC.swift */,
 				5BAED38925D01BE8008B700A /* Assets.xcassets */,
 				5BAED38B25D01BE8008B700A /* LaunchScreen.storyboard */,
 				5BAED38E25D01BE8008B700A /* Info.plist */,
@@ -208,6 +211,7 @@
 			files = (
 				5BAED38525D01BE6008B700A /* ViewController.swift in Sources */,
 				5BAED38125D01BE6008B700A /* AppDelegate.swift in Sources */,
+				5BAED39B25DC0EC0008B700A /* sougoVC.swift in Sources */,
 				5BAED38325D01BE6008B700A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

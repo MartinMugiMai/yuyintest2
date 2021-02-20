@@ -229,10 +229,14 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate{
         var indexnum: Int = 0
         let long2 = jieguo.count
         var str3: String = ""
-        for ij in 0..<3 {
-            let ij1 = ij + xueqiIndex
-            print(jieguo[jieguo.index(jieguo.startIndex, offsetBy: ij1)])
-            str3.append(jieguo[jieguo.index(jieguo.startIndex, offsetBy: ij1)])
+        if (long2 <= 3) {
+            return jieguo
+        }else {
+            for ij in 0..<3 {
+                let ij1 = ij + xueqiIndex
+                print(jieguo[jieguo.index(jieguo.startIndex, offsetBy: ij1)])
+                str3.append(jieguo[jieguo.index(jieguo.startIndex, offsetBy: ij1)])
+            }
         }
         print("所查询学期是第")
         print(str3)
@@ -244,11 +248,21 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate{
         var indexnum: Int = 0
         let long2 = jieguo.count
         var str3: String = ""
-        for ij in 0..<4 {
-            let ij1 = ij + erIndex
-            print(jieguo[jieguo.index(jieguo.startIndex, offsetBy: ij1)])
-            str3.append(jieguo[jieguo.index(jieguo.startIndex, offsetBy: ij1)])
+        if (long2 <= 3) {
+            return jieguo
+        }else if (long2 >= 4) {
+            for ij in 0..<4 {
+                let ij1 = ij + erIndex
+                print(jieguo[jieguo.index(jieguo.startIndex, offsetBy: ij1)])
+                str3.append(jieguo[jieguo.index(jieguo.startIndex, offsetBy: ij1)])
+            }
         }
+        
+//        for ij in 0..<4 {
+//            let ij1 = ij + erIndex
+//            print(jieguo[jieguo.index(jieguo.startIndex, offsetBy: ij1)])
+//            str3.append(jieguo[jieguo.index(jieguo.startIndex, offsetBy: ij1)])
+//        }
         print("所查询学年第")
         xuenian.text = str3
         print(str3)
