@@ -251,6 +251,18 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate{
         if (long2 <= 3) {
             return jieguo
         }else if (long2 >= 4) {
+            str3.append(jieguo[jieguo.index(jieguo.startIndex, offsetBy: 3)])
+            if str3 == "周" {
+                //str3.append(jieguo[jieguo.index(jieguo.startIndex, offsetBy: 3)])
+                print("排除“第十周以上”被年份提取方法识别")
+                return jieguo
+            }
+            if str3 == "章" {
+                //str3.append(jieguo[jieguo.index(jieguo.startIndex, offsetBy: 3)])
+                print("排除“第十周以上”被年份提取方法识别")
+                return jieguo
+            }
+            str3 = ""
             for ij in 0..<4 {
                 let ij1 = ij + erIndex
                 print(jieguo[jieguo.index(jieguo.startIndex, offsetBy: ij1)])

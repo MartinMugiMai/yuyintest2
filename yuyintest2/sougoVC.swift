@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Flutter
 
 class sougoVC: UIViewController {
 
@@ -16,6 +17,9 @@ class sougoVC: UIViewController {
     
     @IBAction func recButton(_ sender: Any) {
         print("按下录音")
+        let flutterEngine = (UIApplication.shared.delegate as! AppDelegate).flutterEngine
+        let flutterViewController = FlutterViewController(engine: flutterEngine, nibName: nil, bundle: nil)
+        present(flutterViewController, animated: true, completion: nil)
     }
     
     

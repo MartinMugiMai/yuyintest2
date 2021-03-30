@@ -6,14 +6,20 @@
 //
 
 import UIKit
+import Flutter
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
+    lazy var flutterEngine = FlutterEngine(name: "jmygflu")
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        flutterEngine.run()
+        
+        
         return true
     }
 

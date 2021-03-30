@@ -102,6 +102,7 @@
 			buildConfigurationList = 5BAED39125D01BE8008B700A /* Build configuration list for PBXNativeTarget "yuyintest2" */;
 			buildPhases = (
 				62940F9E8B6EA4DCB6ABCBA4 /* [CP] Check Pods Manifest.lock */,
+				4F6C4F774B6AD2DC00A81A75 /* [CP-User] Run Flutter Build jmygflu Script */,
 				5BAED37925D01BE6008B700A /* Sources */,
 				5BAED37A25D01BE6008B700A /* Frameworks */,
 				5BAED37B25D01BE6008B700A /* Resources */,
@@ -167,22 +168,27 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-yuyintest2/Pods-yuyintest2-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/ProgressHUD/ProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-yuyintest2/Pods-yuyintest2-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-yuyintest2/Pods-yuyintest2-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-yuyintest2/Pods-yuyintest2-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-yuyintest2/Pods-yuyintest2-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		4F6C4F774B6AD2DC00A81A75 /* [CP-User] Run Flutter Build jmygflu Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "[CP-User] Run Flutter Build jmygflu Script";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/jmygflu/.iOS/Flutter/flutter_export_environment.sh\"\nexport VERBOSE_SCRIPT_LOGGING=1 && \"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh build";
 		};
 		62940F9E8B6EA4DCB6ABCBA4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -362,6 +368,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MV49UMU74C;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = yuyintest2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -382,6 +389,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MV49UMU74C;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = yuyintest2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
