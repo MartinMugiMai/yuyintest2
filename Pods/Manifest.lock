@@ -1,24 +1,43 @@
 PODS:
   - Alamofire (5.4.0)
+  - Flutter (1.0.0)
+  - FlutterPluginRegistrant (0.0.1):
+    - Flutter
+  - jmygflu (0.0.1):
+    - Flutter
   - ProgressHUD (13.4)
   - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
   - Alamofire
+  - Flutter (from `jmygflu/.iOS/Flutter/engine`)
+  - FlutterPluginRegistrant (from `jmygflu/.iOS/Flutter/FlutterPluginRegistrant`)
+  - jmygflu (from `jmygflu/.iOS/Flutter`)
   - ProgressHUD
   - SwiftyJSON
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - ProgressHUD
     - SwiftyJSON
 
+EXTERNAL SOURCES:
+  Flutter:
+    :path: jmygflu/.iOS/Flutter/engine
+  FlutterPluginRegistrant:
+    :path: jmygflu/.iOS/Flutter/FlutterPluginRegistrant
+  jmygflu:
+    :path: jmygflu/.iOS/Flutter
+
 SPEC CHECKSUMS:
   Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
+  Flutter: ac41d61a47ae5bf8195a5598d2d63754888ec0d5
+  FlutterPluginRegistrant: 2afd5ea46d3a949472c9b7da6462d8fbf7d8b16e
+  jmygflu: 5b01bc5ca44c18700d1692a5b6a9e9d941bf9fdc
   ProgressHUD: 137a7fc677487c5581668f4490563124fb35c232
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 5d6d4e12e639ce6ce7f57cb99248b2722b303a8d
+PODFILE CHECKSUM: 88a233b50bec81ed3090fe1a24762cae9d69ebac
 
-COCOAPODS: 1.5.2
+COCOAPODS: 1.10.1
