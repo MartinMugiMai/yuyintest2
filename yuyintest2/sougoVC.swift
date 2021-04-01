@@ -9,7 +9,8 @@ import UIKit
 import Flutter
 
 class sougoVC: UIViewController {
-
+//    var flutterEngine: FlutterEngine = FlutterEngine()
+//    var flutterViewController: FlutterViewController = FlutterViewController()
     
     @IBOutlet weak var recordButtonL: UIButton!
     
@@ -19,6 +20,7 @@ class sougoVC: UIViewController {
         print("按下录音")
         let flutterEngine = (UIApplication.shared.delegate as! AppDelegate).flutterEngine
         let flutterViewController = FlutterViewController(engine: flutterEngine, nibName: nil, bundle: nil)
+        GeneratedPluginRegistrant.register(with: flutterViewController.pluginRegistry())
         present(flutterViewController, animated: true, completion: nil)
     }
     
@@ -28,7 +30,9 @@ class sougoVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //flutterEngine = (UIApplication.shared.delegate as! AppDelegate).flutterEngine
+        //flutterViewController = FlutterViewController(engine: self.flutterEngine, nibName: nil, bundle: nil)
+        //GeneratedPluginRegistrant.register(with: flutterViewController.pluginRegistry())
         // Do any additional setup after loading the view.
     }
     

@@ -14,13 +14,13 @@ let kOverlayStyleUpdateNotificationKey = "io.flutter.plugin.platform.SystemChrom
 class AppDelegate: FlutterAppDelegate {
     
     lazy var flutterEngine = FlutterEngine(name: "jmygflu")
-
+    //self.flutterEngine = FlutterEngine(name: "jmygflu")
 
     override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         flutterEngine.run()
-        GeneratedPluginRegistrant.register(with: self )
+        //GeneratedPluginRegistrant.register(with: self )
        // GeneratedPluginRegistrant.register(with: FlutterViewController.pluginRegistry())
         
         return true
