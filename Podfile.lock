@@ -1,20 +1,35 @@
 PODS:
   - Alamofire (5.4.0)
   - Flutter (1.0.0)
+  - flutter_svprogresshud (0.0.1):
+    - Flutter
+    - flutter_svprogresshud/SVProgressHUD_Core (= 0.0.1)
+  - flutter_svprogresshud/SVProgressHUD_Core (0.0.1):
+    - Flutter
   - FlutterPluginRegistrant (0.0.1):
     - Flutter
+    - flutter_svprogresshud
+    - shared_preferences
+    - webview_flutter
   - jmygflu (0.0.1):
     - Flutter
   - ProgressHUD (13.4)
+  - shared_preferences (0.0.1):
+    - Flutter
   - SwiftyJSON (5.0.0)
+  - webview_flutter (0.0.1):
+    - Flutter
 
 DEPENDENCIES:
   - Alamofire
   - Flutter (from `jmygflu/.iOS/Flutter/engine`)
+  - flutter_svprogresshud (from `jmygflu/.iOS/.symlinks/plugins/flutter_svprogresshud/ios`)
   - FlutterPluginRegistrant (from `jmygflu/.iOS/Flutter/FlutterPluginRegistrant`)
   - jmygflu (from `jmygflu/.iOS/Flutter`)
   - ProgressHUD
+  - shared_preferences (from `jmygflu/.iOS/.symlinks/plugins/shared_preferences/ios`)
   - SwiftyJSON
+  - webview_flutter (from `jmygflu/.iOS/.symlinks/plugins/webview_flutter/ios`)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -25,18 +40,27 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   Flutter:
     :path: jmygflu/.iOS/Flutter/engine
+  flutter_svprogresshud:
+    :path: jmygflu/.iOS/.symlinks/plugins/flutter_svprogresshud/ios
   FlutterPluginRegistrant:
     :path: jmygflu/.iOS/Flutter/FlutterPluginRegistrant
   jmygflu:
     :path: jmygflu/.iOS/Flutter
+  shared_preferences:
+    :path: jmygflu/.iOS/.symlinks/plugins/shared_preferences/ios
+  webview_flutter:
+    :path: jmygflu/.iOS/.symlinks/plugins/webview_flutter/ios
 
 SPEC CHECKSUMS:
   Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
   Flutter: ac41d61a47ae5bf8195a5598d2d63754888ec0d5
-  FlutterPluginRegistrant: 2afd5ea46d3a949472c9b7da6462d8fbf7d8b16e
+  flutter_svprogresshud: ceba1e73d861459f50f602df702308c661dd7509
+  FlutterPluginRegistrant: f36af4e2c888af9c453c15a15a842207bbb028d5
   jmygflu: 5b01bc5ca44c18700d1692a5b6a9e9d941bf9fdc
   ProgressHUD: 137a7fc677487c5581668f4490563124fb35c232
+  shared_preferences: af6bfa751691cdc24be3045c43ec037377ada40d
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  webview_flutter: 9f491a9b5a66f2573946a389b2677987b0ff8c0b
 
 PODFILE CHECKSUM: 88a233b50bec81ed3090fe1a24762cae9d69ebac
 

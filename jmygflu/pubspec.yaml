@@ -24,6 +24,17 @@ dependencies:
   flutter:
     sdk: flutter
 
+
+  provider: ^4.1.2 
+  dio: ^3.0.9
+  shared_preferences: any
+  cookie_jar: any
+  dio_cookie_manager: any
+  flutter_svprogresshud: ^0.0.4
+  webview_flutter: any
+  x5_webview: ^0.2.2
+  
+
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
@@ -36,6 +47,8 @@ dev_dependencies:
 # following page: https://dart.dev/tools/pub/pubspec
 
 flutter:
+  assets:
+  - assets/flujmyg.png
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
