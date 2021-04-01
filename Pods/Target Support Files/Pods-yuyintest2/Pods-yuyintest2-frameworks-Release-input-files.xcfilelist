@@ -2,5 +2,8 @@ ${PODS_ROOT}/Target Support Files/Pods-yuyintest2/Pods-yuyintest2-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/ProgressHUD/ProgressHUD.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework
+${BUILT_PRODUCTS_DIR}/flutter_svprogresshud/flutter_svprogresshud.framework
 ${PODS_ROOT}/../jmygflu/.iOS/Flutter/App.framework
+${BUILT_PRODUCTS_DIR}/shared_preferences/shared_preferences.framework
+${BUILT_PRODUCTS_DIR}/webview_flutter/webview_flutter.framework
 ${PODS_XCFRAMEWORKS_BUILD_DIR}/Flutter/Flutter.framework/Flutter

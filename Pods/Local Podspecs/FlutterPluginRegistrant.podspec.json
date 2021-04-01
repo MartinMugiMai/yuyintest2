@@ -28,6 +28,15 @@
   "dependencies": {
     "Flutter": [
 
+    ],
+    "flutter_svprogresshud": [
+
+    ],
+    "shared_preferences": [
+
+    ],
+    "webview_flutter": [
+
     ]
   }
 }
